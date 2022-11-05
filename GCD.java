@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class GCD
+{
+	public static void main(String[] args)
+	{
+		Scanner input= new Scanner(System.in);
+		System.out.print("Enter the Number 1 :");
+		int number1 = input.nextInt();
+		System.out.print("Enter the Number 2 :");
+		int number2 = input.nextInt();
+		
+		int min;
+		
+		if(number1>number2)
+			min=number2;
+		else
+			min=number1;
+			
+		for(int i=min; i>0;i--)
+		{
+			if(number1%i==0 && number2%i==0){
+			System.out.println("The GCD is : "+ i);
+			break;
+			}
+		}
+	}
+}
+		
+		

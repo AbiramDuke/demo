@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+		System.out.println("EUSL/TC/IS/2019/COM/11");
+        System.out.print("Enter expr: ");
+        String expr = input.nextLine();
+        input.close();
+        System.out.println(isBalanced(expr));
+    }
+
+    public static boolean isBalanced(String expr) {
+        StackUsingQueue q = new StackUsingQueue(expr.length());
+        if (expr == null || expr.length() % 2 == 1) {
+            return false;
+        }
+
+        for (int i = 0; i < expr.length(); i++) {
+            char p = expr.charAt(i);
+            if (p == '(' || p == '{' || p == '[') {
+                q.push(p);
+            }
+
+            if (p == ')' || p == '}' || p == ']') {
+                if (q.isEmpty()) {
+                    return false;
+                }
+
+                char top = q.pop();
+
+                if ((top == '(' && p != ')') || (top == '{' && p != '}') || (top == '[' && p != ']')) {
+                    return false;
+                }
+            }
+        }
+        return q.isEmpty();
+    }
+}

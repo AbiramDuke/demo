@@ -1,0 +1,30 @@
+public class PalindromeStackAndQueue{
+	 public static void checkPalindromeUsingStackAndQueue(String word) {
+		 
+		Scanner input = new Scanner(System.in);
+		
+		String word = console.next();
+        console.close();
+		
+        Stack stk = new Stack(word.length());
+        Queue q = new Queue(word.length());
+
+        for (char letter : word.toCharArray()) {
+            stk.push(letter);
+            q.enqueue(letter);
+        }
+
+        boolean isPalindrome = true;
+        while (!q.isEmpty() && !stk.isEmpty()) {
+            if (stk.pop() != q.dequeue()) {
+                isPalindrome = false;
+                break;
+            }
+        }
+
+        if (isPalindrome)
+            System.out.println(word + " is a palindrome using stack and queue");
+        else
+            System.out.println(word + " is not a palindrome using stack and queue");
+    }
+}

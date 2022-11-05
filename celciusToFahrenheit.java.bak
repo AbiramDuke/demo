@@ -1,0 +1,20 @@
+import java.util.Scanner;
+public class celciusToFahrenheit
+{
+	public static void main(String args[])
+	{
+		int adder=32;
+		
+		Scanner input=new Scanner(System.in);
+		double celcius;
+		double fahrenheit;
+		
+		System.out.print("Enter the temperature in Celcius : ");
+		celcius = input.nextDouble();
+		
+		fahrenheit= ((celcius*9)/5)+32;
+		
+		System.out.print("Temperature in fahrenheit : " + fahrenheit);
+		
+	}
+}

@@ -1,0 +1,31 @@
+class CharStack{
+	char l[]= new char[100];
+	int tos;
+	
+	CharStack(){
+		tos=-1;
+	}
+	
+	void push(char letter){
+		 if(tos==99) System.out.println("Stack is full");
+		 else l[++tos]=letter;
+	 }
+	 
+	 char pop(){
+		 if(tos>=0)
+			return l[tos--];
+		 else {
+			 System.out.println("Stack is empty");
+			 return 0;
+		 }
+	 }
+	 
+	 boolean isEmpty(){
+		 return(tos<0);
+	 }
+	 
+	 int countStack(){
+		 return(tos+1);
+	 }
+	 
+ }

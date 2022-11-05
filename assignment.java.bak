@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class assignment
+{
+	public static int minimumNumber(int x,int y,int z)
+	{
+		if(x<y)
+		{
+			if(x<z) return x;
+			else return z;
+		}
+		else
+		{
+			if(y<z) return y;
+			else return z;
+		}
+	}
+	
+	public static void main(String args[])
+	{
+		Scanner input=new Scanner(System.in);
+		int num1,num2,num3;
+		System.out.print("Enter your numbers : ");
+		num1 = input.nextInt();
+		num2 = input.nextInt();
+		num3 = input.nextInt();
+		System.out.println(minimumNumber(num1,num2,num3));
+	}
+}

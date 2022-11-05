@@ -1,0 +1,40 @@
+class singleLinkedList1
+{
+	public static void main(String args[])
+	{
+		int data;
+		Node nodeA = new node(6);
+		Node nodeB = new node(3);
+		Node nodeC = new node(4);
+		Node nodeD = new node(2);
+		Node nodeE = new node(1);
+		
+		Node head = nodeA;
+		head.next = nodeB;
+		nodeB.next = nodeC;
+		nodeC.next = nodeD;
+		nodeD.next = nodeE;
+		
+		System.out.println("Head node is " + head.data);
+		System.out.println("Second node is " + nodeB.data);
+		System.out.println("Third node is " + nodeC.data);
+		System.out.println("Fourth node is " + nodeD.data);
+		System.out.println("Fifth node is " + nodeE.data);
+		
+		//System.out.println("Number of nodes are " + head.data);
+	}
+	
+	static int countNodes(Node head)
+	{
+		int count =0;
+		Node currentNode=head;
+		
+		while(currentNode!=null)
+		{
+			count++;
+			currentNode=currentNode.next;
+		}
+		return count;
+	}
+}
+	
